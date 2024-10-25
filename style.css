@@ -71,20 +71,6 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-/* 메뉴 호버 효과 */
-.main-menu ul li a:hover {
-    color: #f54291;
-}
-
-/* 모바일 메뉴 토글 버튼 */
-.mobile-menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
 }
 
 /* Hero 섹션 */
@@ -203,13 +189,6 @@ body {
     height: auto;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* 이미지 호버 효과 */
-.youtube-importance .image-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* 제작사 비교 섹션 */
@@ -228,12 +207,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.company-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* 제작사 카드 제목 */
@@ -261,11 +234,6 @@ body {
 .company-card .image-gallery img {
     width: 45%;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.company-card .image-gallery img:hover {
-    transform: scale(1.05);
 }
 
 /* 세부 사항 섹션 */
@@ -309,12 +277,6 @@ body {
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.details .image-gallery-centered img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* 이미지 캡션 스타일 */
@@ -328,7 +290,7 @@ body {
 /* 경험 섹션 */
 .experience {
     padding: 70px 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
     text-align: center;
 }
@@ -353,11 +315,6 @@ body {
 .experience .image-gallery img {
     width: 25%;
     border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.experience .image-gallery img:hover {
-    transform: scale(1.05);
 }
 
 /* 추가 정보 섹션 */
@@ -443,12 +400,6 @@ body {
     right: 10px;
 }
 
-/* 슬라이더 버튼 호버 효과 */
-.additional-info button.prev:hover,
-.additional-info button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
 /* 비디오 섹션 */
 .video-wrapper {
     position: relative;
@@ -503,13 +454,71 @@ section.additional-info {
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 30px;
-    transition: background-color 0.3s, transform 0.3s;
     margin: 5px;
 }
 
-.cta-button:hover {
-    background-color: #eee;
-    transform: scale(1.05);
+/* 로고 슬라이더 */
+.logo-slider {
+    width: 100%;  /* 슬라이더의 너비를 화면에 맞게 설정 */
+    max-width: 1500px;  /* 최대 너비는 1500px로 제한 */
+    margin: 0 auto;  /* 중앙 정렬 */
+    overflow: hidden;  /* 슬라이더 밖의 내용 숨김 */
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.logo-track {
+    display: flex;
+    animation: scroll 30s linear infinite;  /* 무한 반복 애니메이션 */
+    width: max-content; /* 트랙의 너비를 컨텐츠에 맞도록 설정 */
+}
+
+.logo-track img {
+    height: 50vh;  /* 로고 이미지 높이를 화면 높이의 50%로 설정 */
+    width: auto;    /* 이미지 비율 유지하며 크기 조정 */
+}
+
+/* 자연스러운 무한 반복 애니메이션 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);  /* 트랙의 절반을 이동하여 자연스러운 반복 */
+    }
+}
+
+/* 볼릿 */
+.bullet-container {
+    display: flex; /* 플렉스박스로 설정하여 불릿과 텍스트를 가로 정렬 */
+    align-items: flex-start; /* 텍스트와 불릿의 수직 정렬을 맞춤 */
+    justify-content: center; /* 전체 좌측 정렬 */
+    text-align: left; /* 텍스트를 좌측 정렬 */
+    margin-bottom: 5px; /* 항목 간 여백 */
+}
+
+.bullet-point::before {
+    content: "•"; /* 불릿 모양 지정 */
+    font-size: 1.5em; /* 불릿 크기 조정 */
+    margin-right: 8px; /* 불릿과 텍스트 사이 간격 */
+    color: black; /* 불릿 색상 */
+}
+
+.bullet-point {
+    display: inline; /* 인라인 형태로 표시 */
+    line-height: 0.1; /* 줄 간격 조정 */
+}
+
+.bullet-point2::before {
+    content: "•"; /* 불릿 모양 지정 */
+    font-size: 1.5em; /* 불릿 크기 조정 */
+    margin-right: 8px; /* 불릿과 텍스트 사이 간격 */
+    color: rgb(255, 255, 255); /* 불릿 색상 */
+}
+
+.bullet-point2 {
+    display: inline; /* 인라인 형태로 표시 */
+    line-height: 0.1; /* 줄 간격 조정 */
 }
 
 /* Footer 스타일 */
@@ -543,36 +552,33 @@ footer p {
 
     /* 모바일 메뉴 */
     .main-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #111;
-        z-index: 999;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.3s ease;
-    }
-
-    .main-menu.open {
-        max-height: 500px;
+        display: flex;
+        justify-content: flex-end; /* 우측 정렬 */
+        align-items: center;
+        background-color: transparent; /* 배경 투명으로 설정 */
+        position: relative; /* 위치 상대적으로 변경 */
+        top: auto;
+        left: auto;
+        width: auto;
+        max-height: none; /* 높이 제한 해제 */
+        overflow: visible; /* 오버플로우 보이도록 설정 */
     }
 
     .main-menu ul {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 20px;
+        display: flex;
+        gap: 20px;
+        padding: 0; /* 패딩 제거 */
     }
 
     .main-menu ul li {
-        width: 100%;
+        width: auto; /* 너비 자동 */
     }
 
     .main-menu ul li a {
         display: block;
-        padding: 10px 0;
+        padding: 10px 15px;
         color: #fff;
-        text-align: left;
+        text-align: center;
     }
 
     /* Hero 섹션 */
