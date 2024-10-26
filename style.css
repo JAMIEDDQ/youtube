@@ -289,7 +289,7 @@ body {
 
 /* 경험 섹션 */
 .experience {
-    padding: 70px 0;
+    padding: 20px 0;
     background-color: #ffffff;
     color: #333;
     text-align: center;
@@ -519,6 +519,31 @@ section.additional-info {
 .bullet-point2 {
     display: inline; /* 인라인 형태로 표시 */
     line-height: 0.1; /* 줄 간격 조정 */
+}
+
+/* logo-slider에 밑줄 대신 가상 요소로 밑줄 추가 */
+.logo-slider {
+    position: relative; /* 가상 요소 위치 설정 */
+    padding-bottom: 20px; /* 이미지와 밑줄 사이 여백 */
+    margin: 0 auto 60px; /* 자동 가운데 정렬 */
+}
+
+.logo-slider:after {
+    content: ""; /* 가상 요소 생성 */
+    position: absolute;
+    bottom: 0; /* 부모 요소의 아래쪽에 위치 */
+    left: 20px; /* 왼쪽 여백 */
+    right: 20px; /* 오른쪽 여백 */
+    height: 2px; /* 밑줄 두께 */
+    background-color: #f54291; /* 밑줄 색상 */
+}
+
+/* 모바일 화면에서 양쪽 여백을 더 넓게 설정 */
+@media (max-width: 768px) {
+    .logo-slider:after {
+        left: 40px; /* 왼쪽 여백 증가 */
+        right: 40px; /* 오른쪽 여백 증가 */
+    }
 }
 
 /* Footer 스타일 */
